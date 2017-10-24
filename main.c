@@ -12,15 +12,23 @@ int main(int argc,char *argv[])
     MEMPAGEBLOCKS *mempageBlocks = NULL;
     MEMSEGMENTBLOCKS *memSegBlocksHead = NULL;  
     
-    printf("Specify the type of input:\n1.File Input\n2.Console Input\nChoice:");
-    scanf("%d", &choice);
-    switch(choice){
-        case 1:
+    while(choice!=5){
+        printf("-----------------MENU---------------------\n");
+        printf("1.Enter the data through a file\n");
+        printf("2.Enter the data through the console\n");
+        printf("3.Implementation of Paging on the data\n");
+        printf("4.Implementation of Segmentation on data\n");
+        printf("5.Exit the application\n");
+        printf("------------------------------------------\n");
+        printf("Your Choice:");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
             printf("Enter the name of the file:");
             scanf("%s", inputFile);
             dataList = getProcessData(inputFile);
-        break;
-        case 2:
+            break;
+            case 2:
             printf("Enter the number of processes:");
             scanf("%d", &n);
             printf("Enter the process memory size in bytes:\n");
@@ -30,23 +38,28 @@ int main(int argc,char *argv[])
                 intInsertAtEnd(i+1, &(dataList));
                 intInsertAtEnd(size, &(dataList));
             }
-        break;
-        default:
-            printf("Error in taking the input data....\n");
-    }
-    if(dataList != NULL){
-        printf("MENU\n1.Paging\n2.Segmentation\nChoice:");
-        scanf("%d", &choice);
-        switch(choice){
-            case 1:
-                AllocatePAGING(s_blockHead, virtmempageBlocks, mempageBlocks, dataList);
             break;
-            case 2:
+            case 3:
+            if(dataList!=NULL){
+                AllocatePAGING(s_blockHead, virtmempageBlocks, mempageBlocks, dataList);
+            } else {
+                printf("\n\nerr:Please enter some valid process data first...\n\n");
+            }
+            break;
+            case 4:
+            if(dataList!=NULL){
                 AllocateSEGMENTATION(s_blockHead, memSegBlocksHead, dataList);
+            } else {
+                printf("\n\nerr:Please enter some valid process data first...\n\n");
+            }
+            break;
+            case 5:
+                printf("Bye!");
             break;
             default:
-            printf("Error to implement algorithms,command arguments error....\n");
-        } 
-    }         
+            printf("Invalid input provided to the program....\n");
+            break;    
+        }
+    }      
     return 0;
 }

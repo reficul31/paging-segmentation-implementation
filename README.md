@@ -23,5 +23,5 @@ In this small project we have implemented the visualization of the Paging and Se
 Team Members
 * [Abhay Sahni](https://github.com/abhaysahni)
 * Abhishek Vashisht
-* Kshitij Rana
+* [Kshitij Rana](https://github.com/kshitijrana)
 * [Shivang Bharadwaj](https://github.com/reficul31)

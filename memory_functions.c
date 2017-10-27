@@ -1,4 +1,4 @@
-#include "myheader.h"
+#include "header_file.h"
 
 // function create new node with input data as integer type in linked list PROCINTNODE
 PROCINTNODE* procIntCreateNewNode(int process, int size)

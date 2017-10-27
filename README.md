@@ -4,7 +4,7 @@ This is a proof of concept used to show the implementation of the Paging and Seg
 ## Utilization of the code
 #### How to use?
 * First run the command  
-```gcc algorithms.c getDataFromFile.c main.c memoryListFunctions.c myheader.h```  
+```gcc *.c header_file.h```  
 * Then run the file in the following way  
 ```./a.out```  
 

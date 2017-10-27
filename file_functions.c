@@ -1,4 +1,4 @@
-#include "myheader.h"
+#include "header_file.h"
 
 // function to create new node with input data as character type in linked list 
 NODE* createNewNode(char data)
